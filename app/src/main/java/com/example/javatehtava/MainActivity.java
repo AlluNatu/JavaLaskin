@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
     float f1, f2;
-    private EditText luku1, luku2;
+    private EditText luku1;
+    private EditText luku2;
     private TextView textOutput;
 
     @Override
@@ -28,12 +31,15 @@ public class MainActivity extends AppCompatActivity {
         StringBuilder sb2 = new StringBuilder(luku2.getText());
         String s1 = sb.toString();
         String s2 = sb2.toString();
+
         if (s1 == ""){
             s1 = "0";
+            Toast.makeText(this, "Et lisännyt ensimmäistä lukua, ensimmäinen luku = 0", Toast.LENGTH_LONG).show();
         }
 
         if (s2 == ""){
             s2 = "0";
+            Toast.makeText(this, "Et lisännyt toista lukua, toinen luku = 0", Toast.LENGTH_LONG).show();
         }
         f1 = Float.parseFloat(s1);
         f2 = Float.parseFloat(s2);
